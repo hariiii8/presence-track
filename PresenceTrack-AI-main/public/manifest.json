@@ -1,0 +1,21 @@
+{
+  "name": "PresenceTrack AI",
+  "short_name": "PresenceTrack AI",
+  "description": "PresenceTrack AI — Ambient Intelligent Attendance & Privacy Analytics",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF9FC",
+  "theme_color": "#1F1F1F",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/logo-icon-transparent.png",
+      "sizes": "192x192 256x256",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <style>
+    .blade { fill: #0F172A; }
+    .orbit { stroke: #64748B; }
+    @media (prefers-color-scheme: dark) {
+      .blade { fill: #F8FAFC; }
+      .orbit { stroke: #94A3B8; }
+    }
+  </style>
+
+  <!-- Central Person Silhouette -->
+  <circle cx="50" cy="42.5" r="7" fill="#10B981" />
+  <path d="M 38 58 C 38 49, 62 49, 62 58 Z" fill="#10B981" />
+
+  <!-- 6 Aperture Blades (Camera Shutter) -->
+  <g class="blade" fill-rule="evenodd">
+    <!-- Blade 1 (top) -->
+    <path d="M 50 12 A 36 36 0 0 1 81.18 28 L 57.75 41.5 A 15.5 15.5 0 0 0 42.25 41.5 L 29.5 22.5 A 36 36 0 0 1 50 12 Z" />
+    <!-- Blade 2 (top-right) -->
+    <path d="M 81.18 28 A 36 36 0 0 1 86 64 L 63.4 51.5 A 15.5 15.5 0 0 0 57.75 41.5 L 81.18 28 Z" />
+    <!-- Blade 3 (bottom-right) -->
+    <path d="M 86 64 A 36 36 0 0 1 59.5 81.5 L 50 63.5 A 15.5 15.5 0 0 0 63.4 51.5 L 86 64 Z" />
+    <!-- Blade 4 (bottom) -->
+    <path d="M 59.5 81.5 A 36 36 0 0 1 28.5 76 L 36.6 57.5 A 15.5 15.5 0 0 0 50 63.5 L 59.5 81.5 Z" />
+    <!-- Blade 5 (bottom-left) -->
+    <path d="M 28.5 76 A 36 36 0 0 1 14 48 L 36.6 44.5 A 15.5 15.5 0 0 0 36.6 57.5 L 28.5 76 Z" />
+    <!-- Blade 6 (top-left) -->
+    <path d="M 14 48 A 36 36 0 0 1 29.5 22.5 L 42.25 41.5 A 15.5 15.5 0 0 0 36.6 44.5 L 14 48 Z" />
+  </g>
+
+  <!-- Orbital Ring & Satellite Node -->
+  <path d="M 10 65 C 10 88, 76 96, 92 68" class="orbit" stroke-width="2.6" stroke-linecap="round" />
+  <circle cx="92" cy="68" r="4.2" fill="#10B981" />
+</svg>

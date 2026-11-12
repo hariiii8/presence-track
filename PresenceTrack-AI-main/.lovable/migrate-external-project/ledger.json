@@ -1,0 +1,145 @@
+{
+  "source": "code-archive: presencetrack-ambient (Next.js 15 + Supabase)",
+  "capabilities": [
+    {
+      "capability": "code: pages (/, /login, /recovery, /enclave/employee, /enclave/hr, /enclave/security, /enclave/admin)",
+      "source": "app/",
+      "outcome": "migrated",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "design system (Porcelain & Umbra liquid-glass theme, Plus Jakarta Sans / JetBrains Mono)",
+      "source": "app/globals.css, tailwind.config.ts",
+      "outcome": "ported to semantic tokens",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "schema (enterprise_users, esp32_camera_nodes, passive_transits, employee_daily_dwell, merkle_audit_blocks, dpo_erasure_requests)",
+      "source": "supabase/schema.sql",
+      "outcome": "migrated with role table, RLS, triggers",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "records",
+      "source": "source Supabase project (no export attached)",
+      "outcome": "migrate",
+      "status": "pending",
+      "next_action": "request per-table CSV/JSON exports after preview"
+    },
+    {
+      "capability": "auth identities",
+      "source": "demo persona login (no real auth) + Supabase auth metadata roles",
+      "outcome": "Lovable Cloud email/password; profiles link on verified email; first verified account becomes Super Admin",
+      "status": "verified",
+      "next_action": "request user export to import existing personnel"
+    },
+    {
+      "capability": "authorization (role enclaves employee/hr_ops/security/super_admin)",
+      "source": "middleware.ts + RLS",
+      "outcome": "user_roles + has_role, route guards, RLS",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "public endpoint POST /api/esp32/register-node",
+      "source": "app/api/esp32/register-node + firmware",
+      "outcome": "/api/public/esp32/register-node with device key",
+      "status": "implemented",
+      "next_action": "user sets ESP32_DEVICE_KEY, then verify success path"
+    },
+    {
+      "capability": "public endpoint POST /api/esp32/boundary-transit",
+      "source": "app/api/esp32/boundary-transit + firmware",
+      "outcome": "/api/public/esp32/boundary-transit with device key + consent check",
+      "status": "implemented",
+      "next_action": "user sets ESP32_DEVICE_KEY, then verify success path"
+    },
+    {
+      "capability": "/api/esp32/stream-proxy",
+      "source": "app/api/esp32/stream-proxy (no UI caller)",
+      "outcome": "replaced by role-restricted node reads (no UI caller in source)",
+      "status": "replaced",
+      "next_action": "none"
+    },
+    {
+      "capability": "/api/reports/export-csv",
+      "source": "HR console download",
+      "outcome": "server function + download",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "/api/reports/merkle-proof",
+      "source": "admin",
+      "outcome": "server function verify + anchor block",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "/api/dpdp/cert, /api/dpdp/revoke",
+      "source": "employee consent vault",
+      "outcome": "server function cert + database actions for revoke/approve",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "/api/auth/login, /api/auth/logout",
+      "source": "demo cookie auth",
+      "outcome": "replaced by Lovable Cloud auth",
+      "status": "replaced",
+      "next_action": "none"
+    },
+    {
+      "capability": "realtime (transits, nodes, merkle blocks)",
+      "source": "lib/supabase/client.ts",
+      "outcome": "enabled for transits, nodes, blocks",
+      "status": "implemented",
+      "next_action": "none"
+    },
+    {
+      "capability": "ESP32-CAM firmware",
+      "source": "firmware/",
+      "outcome": "in firmware/; Wi-Fi credentials stripped; HTTPS + device key",
+      "status": "implemented",
+      "next_action": "user fills Wi-Fi, app URL, device key and reflashes"
+    },
+    {
+      "capability": "secrets",
+      "source": ".env.local (excluded, not read)",
+      "outcome": "old Supabase keys not needed",
+      "status": "accepted",
+      "next_action": "none"
+    },
+    {
+      "capability": "uploaded file bytes / storage",
+      "source": "none detected",
+      "outcome": "n/a",
+      "status": "accepted",
+      "next_action": "none"
+    },
+    {
+      "capability": "schedules / webhooks / payments / email / AI",
+      "source": "none detected",
+      "outcome": "n/a",
+      "status": "accepted",
+      "next_action": "none"
+    },
+    {
+      "capability": "cutover",
+      "source": "firmware BACKEND_HOST",
+      "outcome": "reflash nodes with published URL + device key",
+      "status": "pending",
+      "next_action": "user publishes and reflashes"
+    },
+    {
+      "capability": "verification",
+      "source": "-",
+      "outcome": "build, typecheck, tests, sign-up/verify/sign-in, role isolation, revoke/approve, anchor/verify, CSV",
+      "status": "partial",
+      "next_action": "device endpoint success path pending secret; remove QA accounts"
+    }
+  ]
+}
